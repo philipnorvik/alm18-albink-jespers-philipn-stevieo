@@ -1,3 +1,5 @@
+package fortuneteller;
+
 public class Translator {
     
     private String message;
@@ -5,7 +7,7 @@ public class Translator {
                                             "happy about something", "sad about something",
                                             "muscular", "skinny", "moving to another country",
                                             "a unicorn"};
-    private final String[] alternatives2 = {"daughter", "son", "poodle", "cat", "dog", "Ferrari",
+    private final String[] alternatives2 = {"daughter", "son", "poodle", "cat", "puppy", "Ferrari",
                                             "Lamborghini", "10 bedroom house", "5 square meter apartment",
                                             "lizard"};
 
@@ -13,14 +15,27 @@ public class Translator {
         int factor = RandomFactor.zeroToNine();
         StringBuilder result = new StringBuilder();
         
-        result.append("You will soon be ")
+        result.append(person.getName())
+            .append(", you will soon be ")    
             .append(alternatives1[factor])
             .append(". ")
             .append("At the age of ")
             .append(person.getAge() + factor)
-            .append(" you will have a ")
+            .append(" you will get a ")
             .append(alternatives2[factor])
-            .append(". ");
+            .append(". ")
+            .append("\nYou will meet your dream ");
+        
+        if(person.getGender().equalsIgnoreCase("male")){
+            result.append("girl");
+        }else if(person.getGender().equalsIgnoreCase("female")){
+            result.append("man");
+        }else{
+            result.append("partner");
+        }
+        
+        result.append(" in the near future!");
+        message = result.toString();
     }
     
     public String getMessage() {

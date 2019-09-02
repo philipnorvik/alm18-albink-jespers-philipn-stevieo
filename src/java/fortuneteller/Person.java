@@ -1,3 +1,5 @@
+package fortuneteller;
+
 public class Person {
     
     private String name;
