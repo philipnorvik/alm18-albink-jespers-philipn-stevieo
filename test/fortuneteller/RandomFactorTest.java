@@ -5,6 +5,8 @@ import static org.junit.Assert.*;
 
 public class RandomFactorTest {
     
+    Translator translator = new Translator();
+    
     @Test
     public void testZeroToNine() {
         System.out.println("zeroToNine");
@@ -13,5 +15,10 @@ public class RandomFactorTest {
             int result = RandomFactor.zeroToNine();
             assertTrue(result < 10 && result >= 0);
         }
+    }
+    
+    @Test
+    public void testFortune(){
+        
     }
 }

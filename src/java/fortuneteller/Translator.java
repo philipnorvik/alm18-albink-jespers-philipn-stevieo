@@ -16,7 +16,7 @@ public class Translator {
         StringBuilder result = new StringBuilder();
         
         result.append(person.getName())
-            .append(", you will soon be ")    
+            .append(", you will soon be ")
             .append(alternatives1[factor])
             .append(". ")
             .append("At the age of ")
